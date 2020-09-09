@@ -14,6 +14,7 @@ public class TomcatThreadPoolListener implements ApplicationListener<ContextRefr
 
     @Override
     public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) {
+        System.out.println(String.format("[TOMCAT CONFIG] Min Spare Threads: %d", serverProperties.getTomcat().getMinSpareThreads()));
         System.out.println(String.format("[TOMCAT CONFIG] Max Connections: %d", serverProperties.getTomcat().getMaxConnections()));
         System.out.println(String.format("[TOMCAT CONFIG] Max Threads: %d", serverProperties.getTomcat().getMaxThreads()));
         System.out.println(String.format("[TOMCAT CONFIG] Accept Count: %d", serverProperties.getTomcat().getAcceptCount()));
